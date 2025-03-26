@@ -4,4 +4,6 @@ kind: Kustomization
 resources:
 - flight-deployment.yaml
 - flight-service.yaml
+- frontend-deployment.yaml
+- frontend-service.yaml
 
