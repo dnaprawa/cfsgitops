@@ -19,6 +19,6 @@ patches:
     labelSelector: app.kubernetes.io/part-of=booking-microservices
 images:
 - name: ghcr.io/dnaprawa/cicd-from-scratch-flight
-  newTag: sha-b0b68d750639f63599df699a87c068c25d2f9bdd
+  newTag: sha-5b770d202eab60d1cece6cb5f876054598d3e41e
 - name: ghcr.io/dnaprawa/cicd-from-scratch-frontend
-  newTag: sha-b0b68d750639f63599df699a87c068c25d2f9bdd
+  newTag: sha-5b770d202eab60d1cece6cb5f876054598d3e41e
