@@ -1,20 +1,24 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: dnaprawa
 
 resources:
-  - ../../base
+- ../../base
 
 patches:
-- target:
-    kind: Deployment
-    labelSelector: app.kubernetes.io/part-of=booking-microservices
-  patch: |-
+- patch: |-
     - op: add
       path: /spec/template/spec/imagePullSecrets
       value: [{ name: github }]
     - op: add
       path: /spec/progressDeadlineSeconds
       value: 60
+  target:
+    kind: Deployment
+    labelSelector: app.kubernetes.io/part-of=booking-microservices
+images:
+- name: ghcr.io/dnaprawa/cicd-from-scratch-flight
+  newTag: sha-b0b68d750639f63599df699a87c068c25d2f9bdd
+- name: ghcr.io/dnaprawa/cicd-from-scratch-frontend
+  newTag: sha-b0b68d750639f63599df699a87c068c25d2f9bdd
