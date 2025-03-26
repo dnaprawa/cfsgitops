@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flypass-dnaprawa
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    # CHANGE TO YOURS
+    repoURL: 'https://github.com/dnaprawa/cfsgitops.git'
+    path: overlays/dnaprawa
+    # CHANGE TO YOURS
+    targetRevision: main
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dnaprawa
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

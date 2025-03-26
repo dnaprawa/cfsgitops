@@ -17,7 +17,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: k8smaestro/bm-frontend:1.0.0
+        - image: ghcr.io/dnaprawa/cicd-from-scratch-frontend:sha-c755dd94ab8b563682f1d43a54d846216ff61d80
           name: frontend
           ports:
             - containerPort: 8080

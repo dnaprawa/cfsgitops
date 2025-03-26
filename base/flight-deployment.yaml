@@ -17,7 +17,7 @@ spec:
         app: flight
     spec:
       containers:
-        - image: k8smaestro/bm-flight:1.0.0
+        - image: ghcr.io/dnaprawa/cicd-from-scratch-flight:sha-c755dd94ab8b563682f1d43a54d846216ff61d80
           name: flight
           ports:
             - containerPort: 8080
